@@ -1,0 +1,283 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
+
+:root {
+  /* Neutral colors */
+  --neutral-white: hsl(0, 0%, 100%);
+  --neutral-light: hsl(252, 6%, 83%);
+  --neutral-medium: hsl(245, 15%, 58%);
+  --neutral-dark: hsl(245, 19%, 35%);
+  --neutral-black: hsl(248, 70%, 10%);
+  --neutral-transparent: rgba(255, 255, 255, 0.1);
+
+  /* Accent - Orange shades */
+  --orange-primary: hsl(7, 88%, 67%);
+  --orange-dark: hsl(7, 71%, 60%);
+
+  /* Gradients */
+  --orange-to-white-gradient: linear-gradient(
+    to right,
+    hsl(7, 86%, 67%),
+    hsl(0, 0%, 100%)
+  );
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inconsolata", monospace;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-size: 62.5%;
+  background-image: url("assets/images/pattern-circle.svg"),
+    url("assets/images/pattern-squiggly-line-top.svg"),
+    url("assets/images/pattern-lines.svg"),
+    url("assets/images/pattern-circle.svg"),
+    url("assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg"),
+    url("assets/images/background-mobile.png");
+
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+    no-repeat;
+
+  background-position: -50px -50px,
+    /* circle pattern (partially off top-left) */ calc(100% - 20px) 20px,
+    /* squiggly line: move 20px left & 20px down */ center,
+    /* lines pattern: adjust as needed */ calc(100% + 70px) 50%,
+    /*second circle pattern*/ left bottom, /*Squiggly-line-bottom*/ center;
+
+  background-size: 150px, /* circle */ 100px, /* squiggly line */ auto,
+    /* lines */ 150px, /*second circle pattern*/ 250px, cover; /* main background */
+  color: var(--neutral-white);
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url("assets/images/pattern-circle.svg"),
+      url("assets/images/pattern-squiggly-line-top.svg"),
+      url("assets/images/pattern-lines.svg"),
+      url("assets/images/pattern-circle.svg"),
+      url("assets/images/pattern-squiggly-line-bottom-desktop.svg"),
+      url("assets/images/background-mobile.png");
+
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat,
+      no-repeat;
+
+    background-position: 50px -60px,
+      /* circle pattern (partially off top-left) */ calc(100% - 20px) 20px,
+      /* squiggly line: move 20px left & 20px down */ center,
+      /* lines pattern: adjust as needed */ calc(100% + 70px) 50%,
+      /*second circle pattern*/ left bottom, /*Squiggly-line-bottom*/ center;
+
+    background-size: 200px, /* circle */ 400px, /* squiggly line */ auto,
+      /* lines */ 150px, /*second circle pattern*/ 800px, cover; /* main background */
+  }
+}
+
+.container {
+  max-width: 50%;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.container > p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--neutral-medium);
+  font-size: 0.8rem;
+}
+
+.full-logo {
+  margin-bottom: 2rem;
+}
+
+.full-logo > img {
+  display: block;
+  width: 10rem;
+}
+
+#dropZone {
+  border: 1px dashed var(--neutral-dark);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 10px;
+  background: var(--neutral-transparent);
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#dropZone > img {
+  display: block;
+  margin-bottom: 0.5rem;
+  background-color: var(--neutral-dark);
+  border-radius: 8px;
+  width: 2.5rem;
+  padding: 0.5rem;
+}
+
+#dropZone > p {
+  color: var(--neutral-medium);
+}
+
+input {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  width: 20rem;
+  padding: 0.6rem;
+  background-color: var(--neutral-transparent);
+  border: 1px solid var(--neutral-dark);
+  border-radius: 10px;
+  color: var(--neutral-white);
+}
+
+input:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#dropZone:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#dropZone.dragover {
+  background: hsl(7, 86%, 95%);
+  border-color: var(--neutral-black);
+}
+
+#image-error,
+#fname-error,
+#email-error,
+#username-error {
+  margin-bottom: 1rem;
+  color: var(--orange-dark);
+  display: block;
+  font-size: 0.6rem;
+}
+
+button {
+  width: 20rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background-color: var(--orange-primary);
+  border: none;
+  font-weight: 700;
+  color: var(--neutral-black);
+}
+
+button:hover {
+  background-color: var(--orange-dark);
+  color: black;
+}
+
+/* TICKET STYLING */
+
+#ticketImage img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover; /* crop if needed */
+  border-radius: 10px; /* optional: make it rounded */
+  display: block;
+  margin: 0 auto; /* optional: center it */
+}
+
+#email-message {
+  width: 18rem;
+  margin-bottom: 4rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+span.ticketName {
+  background: var(--orange-to-white-gradient);
+  -webkit-background-clip: text; /* for Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* make text show background */
+  background-clip: text; /* standard (not fully supported yet) */
+  color: transparent; /* fallback */
+}
+
+#ticketEmail {
+  color: var(--orange-primary);
+}
+
+.ticket-wrapper {
+  position: relative;
+}
+
+.ticket {
+  position: relative;
+}
+
+#logo-mark {
+  position: absolute;
+  left: 25px;
+  top: 25px;
+}
+
+#ticketImage {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+}
+
+#event {
+  position: absolute;
+  left: 80px;
+  top: 20px;
+  font-size: 2rem;
+}
+
+#date-location {
+  position: absolute;
+  top: 75px;
+  left: 80px;
+  font-size: 0.9rem;
+  color: var(--neutral-medium);
+}
+
+h2.ticketName {
+  position: absolute;
+  bottom: 80px;
+  left: 150px;
+  font-size: 1.2rem;
+}
+
+.github {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 45px;
+  left: 150px;
+  font-size: 0.9rem;
+  color: var(--neutral-medium);
+}
+
+.github > img {
+  margin-right: 0.5rem;
+}
+
+.attribution {
+  margin-top: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}

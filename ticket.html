@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="full-logo">
+        <img src="/assets/images/logo-full.svg" alt="full-logo" />
+      </div>
+
+      <h1>
+        Congrats, <span class="ticketName"></span>! <br />Your ticket is ready.
+      </h1>
+
+      <p id="email-message">
+        We've emailed your ticket to <span id="ticketEmail"></span> and will
+        send updates in the run up to the event.
+      </p>
+
+      <div class="ticket-wrapper">
+        <img
+          src="/assets/images/pattern-ticket.svg"
+          alt="ticket"
+          class="ticket"
+        />
+
+        <img src="/assets/images/logo-mark.svg" alt="logo" id="logo-mark" />
+
+        <h2 id="event">Coding Conf</h2>
+
+        <p id="date-location">Jan 31, 2025 / Austin, TX</p>
+
+        <div id="ticketImage"></div>
+
+        <h2 class="ticketName"></h2>
+
+        <div class="github">
+          <img src="/assets/images/icon-github.svg" alt="GitHub logo" />
+          <p id="ticketGithub"></p>
+        </div>
+      </div>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a
+        >. Coded by <a href="#">KoderBlac</a>.
+      </div>
+    </div>
+
+    <script src="ticket.js" defer></script>
+  </body>
+</html>

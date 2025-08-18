@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="full-logo">
+        <img src="/assets/images/logo-full.svg" alt="full-logo" />
+      </div>
+
+      <h1>Your Journey to Coding Conf 2025 Starts Here!</h1>
+
+      <p>Secure your spot at next year's biggest coding conference.</p>
+
+      <form id="ticketForm" autocomplete="on">
+        <!-- DROP ZONE -->
+        <label for="imageInput">Upload Avatar</label><br />
+        <div id="dropZone">
+          <input type="file" id="imageInput" style="display: none" />
+          <img
+            src="/assets/images/icon-upload.svg"
+            id="uploadIcon"
+            alt="Upload"
+            style="cursor: pointer"
+          />
+          <div class="imageUploaded"></div>
+          <p>Drag and drop or click to upload</p>
+        </div>
+        <span id="image-error"></span>
+
+        <!-- <div class="avatar-spec">
+          <img src="/assets/images/icon-info.svg" alt="info-icon" />
+          <p>Upload your photo (JPG or PNG, max size: 500KB).</p>
+        </div> -->
+
+        <!-- FULLNAME FIELD -->
+        <label for="fullName">Full Name</label> <br />
+        <input type="text" id="fullName" /><br />
+        <span id="fname-error"></span>
+
+        <!-- EMAIL FIELD -->
+        <label for="email">Email Address</label><br />
+        <input type="email" id="email" placeholder="example@email.com" /><br />
+        <span id="email-error"></span>
+
+        <!-- USERNAME FIELD -->
+        <label for="githubUsername">Github Username</label><br />
+        <input
+          type="text"
+          id="githubUsername"
+          placeholder="@yourusername"
+        /><br />
+        <span id="username-error"></span>
+
+        <!-- SUBMIT BUTTON -->
+        <button type="submit">Generate My Ticket</button>
+      </form>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">KoderBlac</a>.
+    </div>
+
+    <script src="form.js" defer></script>
+  </body>
+</html>
