@@ -89,9 +89,9 @@ In future projects, I want to focus on:
 
 ### Useful resources
 
-- MDN CSS documentation (https://developer.mozilla.org/en-US/docs/Web/CSS) Helped me revisit some flexbox and gradient properties.
+- MDN documentation (https://developer.mozilla.org) Helped me revisit some flexbox and gradient properties.
 
-- [W3Schools HTML and CSS Tutorials] (https://www.w3schools.com)
+- [W3Schools HTML, CSS and JS Tutorials] (https://www.w3schools.com)
 
 ### Author
 
