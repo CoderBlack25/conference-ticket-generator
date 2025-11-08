@@ -1,4 +1,3 @@
-//ELEMENT SELECTORS
 const imageInput = document.getElementById("imageInput");
 const uploadIcon = document.getElementById("uploadIcon");
 const imageUploaded = document.querySelector(".imageUploaded");
@@ -7,9 +6,7 @@ const imageError = document.getElementById("image-error");
 
 let imageValid = false;
 
-//HELPERS
 const setError = (idOrElement, message) => {
-  // Can pass in an element (like imageError) or an ID string
   const target =
     typeof idOrElement === "string"
       ? document.getElementById(idOrElement)
@@ -30,7 +27,6 @@ const clearErrors = () => {
   imageError.innerHTML = "";
 };
 
-//IMAGE UPLOAD HANDLERS
 const handleImageChange = (files) => {
   const file = (files || imageInput.files)[0];
   clearImageError();
@@ -42,7 +38,6 @@ const handleImageChange = (files) => {
   if (file.size > 512000)
     return setError(imageError, "Image size must be 500KB or less.");
 
-  //Valid image
   const reader = new FileReader();
   reader.onload = (e) => {
     imageUploaded.innerHTML = `
@@ -57,7 +52,6 @@ const handleImageChange = (files) => {
 
 const clearImageError = () => (imageError.innerHTML = "");
 
-//DROPZONE EVENTS
 dropZone.addEventListener("dragover", (e) => {
   e.preventDefault();
   dropZone.classList.add("dragover");
@@ -73,11 +67,9 @@ dropZone.addEventListener("drop", (e) => {
   handleImageChange(e.dataTransfer.files);
 });
 
-//UPLOAD ICON TRIGGER
 uploadIcon.addEventListener("click", () => imageInput.click());
 imageInput.addEventListener("change", () => handleImageChange());
 
-//FORM VALIDATION
 function validateForm() {
   let valid = true;
   clearErrors();
@@ -119,7 +111,6 @@ function validateForm() {
   return valid;
 }
 
-//FORM SUBMIT
 document.getElementById("ticketForm").addEventListener("submit", (e) => {
   e.preventDefault();
 
