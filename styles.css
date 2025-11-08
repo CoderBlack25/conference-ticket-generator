@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 :root {
-  /* Neutral colors */
   --neutral-white: hsl(0, 0%, 100%);
   --neutral-light: hsl(252, 6%, 83%);
   --neutral-medium: hsl(245, 15%, 58%);
@@ -9,11 +8,9 @@
   --neutral-black: hsl(248, 70%, 10%);
   --neutral-transparent: rgba(255, 255, 255, 0.1);
 
-  /* Accent - Orange shades */
   --orange-primary: hsl(7, 88%, 67%);
   --orange-dark: hsl(7, 71%, 60%);
 
-  /* Gradients */
   --orange-to-white-gradient: linear-gradient(
     to right,
     hsl(7, 86%, 67%),
@@ -191,10 +188,10 @@ button:hover {
 #ticketImage img {
   width: 100px;
   height: 100px;
-  object-fit: cover; /* crop if needed */
-  border-radius: 10px; /* optional: make it rounded */
+  object-fit: cover;
+  border-radius: 10px;
   display: block;
-  margin: 0 auto; /* optional: center it */
+  margin: 0 auto;
 }
 
 #email-message {
@@ -206,10 +203,10 @@ button:hover {
 
 span.ticketName {
   background: var(--orange-to-white-gradient);
-  -webkit-background-clip: text; /* for Chrome, Safari */
-  -webkit-text-fill-color: transparent; /* make text show background */
-  background-clip: text; /* standard (not fully supported yet) */
-  color: transparent; /* fallback */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 #ticketEmail {
